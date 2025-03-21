@@ -1,5 +1,4 @@
 from typing import List
-import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -35,7 +34,7 @@ def gradient_descent(n: int, x_data: List[float], y_data: List[float]):
         w,b = descent_step(alpha,w,b,x_data,y_data)
     return w,b
 
-file_path = os.path.expanduser("~/coffeeshop_record.csv")
+file_path = "coffeeshop_record.csv"
 path = pd.read_csv(file_path)
 
 x_data = path['Number_of_Customers_Per_Day']
