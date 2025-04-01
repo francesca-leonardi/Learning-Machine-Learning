@@ -16,10 +16,9 @@ heart_disease = fetch_ucirepo(id=45)
 X = heart_disease.data.features
 y = heart_disease.data.targets
 
+# Clean data (remove lines with missing entries)
 X = X.dropna()
 y = y.loc[X.index]
-
-print(len(X))
 
 # Split data into training and test sets
 X_train, X_, y_train, y_ = train_test_split(X, y, test_size=0.4, random_state=42)
@@ -51,7 +50,6 @@ model.compile(
 history = model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_cv,y_cv))
 
 # Plot training & validation accuracy
-
 plt.plot(history.history.get('accuracy'), label='Train Accuracy')
 plt.plot(history.history.get('val_accuracy'), label='Validation Accuracy')
 
