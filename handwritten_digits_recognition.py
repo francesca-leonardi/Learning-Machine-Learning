@@ -36,6 +36,7 @@ model.compile(
 # Train model
 history = model.fit(X_train, y_train, epochs = 10, batch_size = 32, validation_data = (X_test,y_test))
 
+# Plot accuracy over time
 plt.plot(history.history.get('accuracy'), label='Train Accuracy')
 plt.plot(history.history.get('val_accuracy'), label='Validation Accuracy')
 
