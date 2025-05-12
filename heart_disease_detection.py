@@ -9,6 +9,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import log_loss
 
+## NEURAL NETWORK APPROACH (to be compared with a random forest approach)    
+
 # Fetch dataset 
 heart_disease = fetch_ucirepo(id=45)
 
